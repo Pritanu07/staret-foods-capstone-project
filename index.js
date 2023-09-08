@@ -30,10 +30,6 @@ app.get('/', (req, res) => {
   //const msg = 'Hello from /test Node!';
   //res.send(msg);
 
-  const server = app.listen(8080, () => {
-    console.log('Server started on http://localhost:8080');
-});
-
-app.listen(PORT, HOST);
+//app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
 module.exports = server; // Export server instance for testing
