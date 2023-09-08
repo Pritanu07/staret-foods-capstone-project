@@ -1,30 +1,37 @@
+// before rum
+//npm install express
+
+// to run 
+// npm start
+
+'use strict';
+
 const express = require('express');
 const path = require('path');
 const app = express();
 app.use(express.static('src'));
 
-// Endpoint 1: /
-// app.get('/', (req, res) => {
-//   res.statusCode = 200;
-//   const msg = 'Welcome to Staret-foods!';
-//   res.send(msg);
-// });
+// Constants
+const PORT = 8080;
+const HOST = '0.0.0.0';
+const OS = require('os');
+const ENV = 'DEV';
 
+
+// App
+//const app = express();
 app.get('/', (req, res) => {
-  // Send the 'index.html' file as-is
+  res.statusCode = 200;
+  //const msg = 'Hello from Node 4!';
+  //res.send(msg);
   res.sendFile(path.join(__dirname, 'src', 'index.html'));
 });
 
-/* // Endpoint 2: /test
-app.get('/test', (req, res) => {
+/*app.get('/test', (req, res) => {
   res.statusCode = 200;
   const msg = 'Hello from /test Node!';
   res.send(msg);
-});
- */
-// Start the server
-const server = app.listen(8080, () => {
-  console.log('Server started on http://localhost:8080');
-});
+});*/
 
-module.exports = server; // Export server instance for testing
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);
